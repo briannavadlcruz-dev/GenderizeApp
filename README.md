@@ -4,7 +4,7 @@ Este proyecto es una aplicación de consola desarrollada para la clase de Estruc
 
 ## Requisitos tecnologicos 
 * **Lenguaje:** Java (JDK 11 o superior)
-* **Librería:** Google Gson 2.10.1 (Incluida en la carpeta `lib`)
+* **Librería:** Google Gson 2.13.2 (Incluida en la carpeta `lib`)
 * **API:** RESTful HTTP Request
 
 ## Estructura del Proyecto
