@@ -3,7 +3,7 @@
 Este proyecto es una aplicación de consola que consume la API pública de [Genderize.io](https://genderize.io/) para determinar el género de una persona basándose en la probabilidad estadística de su nombre.
 
 ## Requisitos tecnologicos 
-* **Lenguaje:** Java (JDK 11 o superior instalado de Oracle)
+* **Lenguaje:** Java (JDK 11 minimo para ejecucion en consola o JDK 17 minimo para ejecucion en vs code)
 * **Conexión a Internet activa** (Indispensable para consultar la API de Genderize).
 * **Sistema operativo:** Windows, Linux o macOS.
 * **Librería:** Google Gson 2.13.2 (Incluida en la carpeta `lib`)
@@ -78,7 +78,7 @@ Si experimenta inconvenientes al ejecutar el programa, consulte los siguientes c
 ### 3. El programa no compila (`Cannot find symbol: HttpClient`)
 * **Síntoma:** Errores al compilar indicando que no reconoce `HttpClient` o `HttpRequest`.
 * **Causa:** Está utilizando una versión antigua de Java (JDK 8 o inferior).
-* **Solución:** Este proyecto requiere **Java 11** o superior, ya que utiliza el cliente HTTP moderno introducido en esa versión. Actualice su JDK.
+* **Solución:** Este proyecto requiere **Java 11 en consola o java 17 en vs code** minimo, ya que utiliza el cliente HTTP moderno introducido en esa versión. Actualice su JDK.
 
 ### 4. Respuesta: "No pudimos determinar el género"
 * **Síntoma:** Ingresa un nombre y el programa dice que no tiene resultados.
