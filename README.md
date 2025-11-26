@@ -1,4 +1,4 @@
-#Consumo de una API: Predictor de Género (Java + API Genderize)
+## Consumo de una API: Predictor de Género (Java + API Genderize)
 
 Este proyecto es una aplicación de consola que consume la API pública de [Genderize.io](https://genderize.io/) para determinar el género de una persona basándose en la probabilidad estadística de su nombre.
 
