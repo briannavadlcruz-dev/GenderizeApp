@@ -13,13 +13,13 @@ public class GenderPredictor {
         
         System.out.println("--- PREDICTOR DE GÉNERO (Probabilístico) ---");
         System.out.print("Ingresa un nombre (ej. Andrea, Kevin, Alex): ");
-        String nombre = scanner.next(); // Usamos .next() para tomar solo la primera palabra
+        String nombre = scanner.next(); // toma solo la primera palabra
 
         try {
-            // 1. Construcción de la URL
+            // Construcción de la URL
             String url = "https://api.genderize.io/?name=" + nombre;
 
-            // 2. Creación del Cliente HTTP
+            // Creación del Cliente HTTP
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -28,13 +28,13 @@ public class GenderPredictor {
 
             System.out.println("Consultando base de datos estadística...");
 
-            // 3. Obtener respuesta
+            // Obtener respuesta
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200) {
                 String jsonResponse = response.body();
                 
-                // 4. Parseo del JSON (Análisis de estructura)
+                // Parseo del JSON 
                 JsonObject jsonObject = JsonParser.parseString(jsonResponse).getAsJsonObject();
 
                 // Verificamos si la API logró identificar el nombre (si 'gender' no es nulo)
@@ -48,10 +48,10 @@ public class GenderPredictor {
                     // Lógica simple para traducir al español
                     String generoEspanol = generoIngles.equals("male") ? "Masculino" : "Femenino";
                     
-                    // Formato de porcentaje (Matemáticas: 0.95 -> 95%)
+                    // Formato de porcentaje 
                     int porcentaje = (int) (probabilidad * 100);
 
-                    // 5. Mostrar resultados
+                    // resultados
                     System.out.println("\nResultados para: " + nombre.toUpperCase());
                     System.out.println("------------------------------------------------");
                     System.out.println(" Género Predicho: " + generoEspanol);
